@@ -18,7 +18,7 @@ function analyze() {
   var uploadFiles = el("file-input").files;
   if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
-  el("analyze-button").innerHTML = "Analyzing...";
+  el("analyze-button").innerHTML = "分析中...";
   var xhr = new XMLHttpRequest();
   var loc = window.location;
   xhr.open(
@@ -34,7 +34,7 @@ function analyze() {
       var response = JSON.parse(e.target.responseText);
       el("result-label").innerHTML = `分析結果 = ${response["result"]}`;
     }
-    el("analyze-button").innerHTML = "Analyze";
+    el("analyze-button").innerHTML = "送出分析";
   };
 
   var fileData = new FormData();
